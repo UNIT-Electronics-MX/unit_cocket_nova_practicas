@@ -1,0 +1,190 @@
+I2C (Inter-Integrated Circuit)
+===============================
+
+Descripción General del I2C
+---------------------------
+
+I2C (Inter-Integrated Circuit o Inter-IC) es un bus de comunicación serial síncrono, multi-maestro, multi-esclavo, de conmutación de paquetes y referencia única. Se utiliza comúnmente para conectar periféricos de baja velocidad a procesadores y microcontroladores. La gran mayoría de las placas de desarrollo de UNIT ELECTRONICS, como DualMCU, DualMCU ONE y Cocket Nova, ofrecen capacidades de comunicación I2C, lo que te permite interconectar una amplia gama de dispositivos I2C. A pesar de que la Cocket Nova no cuenta con I2C nativo, se implementa bajo una técnica llamada bit-banging.
+
+Bit-banging es una técnica de programación en la que se manipulan directamente los pines de un microcontrolador para implementar un protocolo de comunicación. En el caso de I2C, se utilizan dos pines, SDA (Serial Data) y SCL (Serial Clock), para la comunicación entre dispositivos.
+
+.. figure:: /_static/i2c_typic.png
+   :align: center
+   :alt: I2C
+   :width: 90%
+
+   Pines I2C Imagen obtenida de `Application Note A Basic Guide to I2C <https://www.ti.com/lit/an/sbaa565/sbaa565.pdf?ts=1738832263153&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
+
+.. nota::
+
+   Las tarjetas de desarrollo de UNIT ELECTRONICS son compatibles con `Conector JST <https://unit-electronics-mx.github.io/Ecosistema-de-Desarrollo-UNIT/0_1_jst.html#conector-jst-sh-1-0mm-4-pines>`_
+   
+
+
+Ejemplo de aplicación Pantalla SSD1306
+---------------------------------------
+
+.. _figura-ssd1306-display:
+
+.. figure:: /_static/oled.jpg
+   :align: center
+   :alt: pantalla ssd1306
+   :width: 50%
+
+   Pantalla SSD1306
+
+La pantalla OLED monocromática de 128x64 píxeles equipada con un controlador SSD1306 se conecta mediante un conector JST de 1.25mm de 4 pines. La siguiente tabla proporciona los detalles de conexión para la pantalla.
+
+.. list-table:: Asignación de Pines de la Pantalla SSD1306
+   :widths: 20 20
+   :header-rows: 1
+   :align: center
+
+   * - Pin
+     - Conexión
+   * - 1
+     - GND
+   * - 2
+     - VCC
+   * - 3
+     - SDA
+   * - 4
+     - SCL
+
+Cocket Nova implementación de I2C
+---------------------------------
+
+.. raw:: html
+
+
+  <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px;">Código</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Enlace</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">SSD1306</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples/tree/main/Software/examples/I2C/SSD1306" target="_blank">Proyecto Completo </a></td>
+    </tr>
+
+  </table>
+
+.. code-block:: C
+
+  #include "src/config.h"                   
+  #include "src/system.h"                 
+  #include "src/gpio.h"                    
+  #include "src/delay.h"                    
+  #include "src/oled.h"                     
+
+
+
+  void main(void) {
+    CLK_config();                        
+    DLY_ms(5);                          
+
+    OLED_init();                           
+
+    OLED_print("*  UNITelectronics  *");
+    OLED_print("---------------------\n");
+    OLED_print("Ready\n");
+    while(1) {
+
+    }
+  }
+
+
+
+.. figure:: /_static/cocket/oled.png
+   :align: center
+   :alt: pantalla ssd1306
+   :width: 50%
+
+   Pantalla OLED Cocket Nova
+
+
+
+Ejemplo de Integración
+======================
+
+Este ejemplo demuestra cómo integrar el Cargador Boost LiPo & Monitor I2C de UNIT con un ESP32 y mostrar el estado de la batería en una pantalla OLED.
+
+.. caution:: 
+   
+   Dado que el estándar Qwiic opera a 3.3V, se recomienda usar un regulador de voltaje después de la salida JST del módulo para reducir VSYS a 3.3V y proteger los dispositivos Qwiic conectados.
+
+
+Pasos para integrar el `Cargador Boost LiPo & Monitor I2C <https://github.com/UNIT-Electronics/MAX1704X_lib/blob/main/Software/MicroPython/example/max1704x.py>`_ de UNIT con el ESP32 y la pantalla OLED usando el conector JST y la comunicación I2C:
+
+1. **Conectar el Conector JST**: Conecta el conector JST a la placa DualMCU usando el  `conector JST SH de 1.0mm y 4 pines <https://uelectronics.com/producto/conectores-sh1-0mm-con-cable-28-awg-15cm/>`_.
+
+2. **Conectar el ESP32**: Conecta el ESP32 a la placa DualMCU mediante el protocolo de comunicación I2C.
+
+.. figure:: /_static/qwiic.png
+  :align: center
+  :alt: ESP32
+  :width: 50%
+  
+  Conector JST SH de 1.0mm y 4 pines conectado al ESP32.
+
+3. **Soldar la Configuración de Pines de la Batería**: Suelda las configuración apropiada para el cargador de batería. Configura la corriente de carga (0.2 mA) según las especificaciones de la batería.
+
+.. figure:: /_static/back.png
+  :align: center
+  :alt: Panel trasero
+  :width: 40%
+
+  Configuración de Pines de la Batería
+
+.. warning::
+
+   Asegúrate de verificar la polaridad de la batería antes de conectarla al cargador.
+
+4. **Conectar la Pantalla OLED**: Conecta la pantalla OLED al ESP32 usando el protocolo de comunicación I2C.
+
+5. **Subir el Código al ESP32**: Copia el siguiente código al ESP32 y ejecútalo usando Thonny:
+
+.. code-block:: python 
+
+    import machine
+    import time
+    from ocks import SSD1306_I2C
+    from max1704x import max1704x
+
+    i2c = machine.SoftI2C(sda=machine.Pin(21), scl=machine.Pin(22))
+    oled = SSD1306_I2C(128, 64, i2c)
+
+    my_sensor = max1704x(sda_pin=21, scl_pin=22)
+
+    def update_display():
+      oled.fill(0)  
+      oled.text('UNIT Max', 25, 0) 
+
+      vcell = my_sensor.getVCell()
+      soc = my_sensor.getSoc()
+      compensate_value = my_sensor.getCompensateValue()
+      alert_threshold = my_sensor.getAlertThreshold()
+      in_alert = my_sensor.inAlert()
+
+      oled.text("Voltaje: {:.2f}V".format(vcell), 0, 16)
+      oled.text("SOC: {:.1f}%".format(soc), 0, 26)
+      oled.text("Comp: {:.1f}".format(compensate_value), 0, 36)
+      oled.text("Alerta: {}".format("Sí" if in_alert else "No"), 0, 46)
+
+      oled.show()  
+      
+    while True:
+      update_display()  
+      time.sleep(2)
+
+
+6. **Monitorear el Estado de la Batería**: La pantalla OLED mostrará el estado de la batería, incluyendo el voltaje, estado de carga, valor de compensación y estado de alerta.
+
+7. **Cargar la Batería**: Conecta la batería al cargador y monitorea el estado de carga usando la pantalla OLED.
+
+.. figure:: /_static/example.jpg
+   :align: center
+   :alt: Ejemplo de Integración
+   :width: 80%
+
+   Ejemplo de Integración del Cargador Boost LiPo & Monitor I2C de UNIT con ESP32 y Pantalla OLED.

@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MicroPython &#8212; documentación de UNIT DevLab desde cero - 0.0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=0023b8e2"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=00122899"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'upython';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="icon" href="_static/3.png" type="image/x-icon">
+    <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-light" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>
+    <script>document.write(`<img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-dark" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas digitales</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5_spi.html">SPI (Interfaz Periférica Serial)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_USB.html">Interfaz USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/upython.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2Fupython.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/upython.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MicroPython</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MicroPython</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibilidad-de-placas">Compatibilidad de Placas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-avanzadas">Características Avanzadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-y-tipado-en-micropython">Sintaxis y Tipado en MicroPython</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion-y-recursos">Más Información y Recursos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comenzando-con-micropython">Comenzando con MicroPython</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-y-modulos">Bibliotecas y Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ides-y-herramientas">IDEs y Herramientas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-de-instalacion-de-bibliotecas-con-mip">Guía de Instalación de Bibliotecas con MIP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biblioteca-dualmcu">Biblioteca DualMCU</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="micropython">
+<h1>MicroPython<a class="headerlink" href="#micropython" title="Link to this heading">#</a></h1>
+<p>MicroPython es una implementación ligera y eficiente de Python 3. Está optimizado para microcontroladores y entornos restringidos, lo que lo hace ideal para sistemas embebidos e IoT. Proporciona un conjunto amplio de bibliotecas y módulos para interactuar con hardware y periféricos.</p>
+<section id="compatibilidad-de-placas">
+<h2>Compatibilidad de Placas<a class="headerlink" href="#compatibilidad-de-placas" title="Link to this heading">#</a></h2>
+<p>La siguiente tabla enumera las placas compatibles con MicroPython:</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para descargar MicroPython y obtener más información sobre su instalación en placas específicas, visite el <a class="reference external" href="https://www.micropython.org/download/">sitio web oficial de MicroPython</a>.</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">Placas compatibles con MicroPython</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Placa</p></th>
+<th class="head"><p>Descripción y Recursos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESP32</p></td>
+<td><p>Microcontrolador de bajo costo con Wi-Fi y Bluetooth, ideal para aplicaciones IoT. Amplio soporte y documentación.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RP2040</p></td>
+<td><p>Chip utilizado en Raspberry Pi Pico, perfecto para proyectos educativos y sistemas embebidos.</p></td>
+</tr>
+<tr class="row-even"><td><p>STM32</p></td>
+<td><p>Microcontroladores de alto rendimiento para aplicaciones en tiempo real (p. ej., STM32F4 y STM32F7).</p></td>
+</tr>
+<tr class="row-odd"><td><p>nRF52</p></td>
+<td><p>Dispositivos de bajo consumo, adecuados para aplicaciones BLE, con soporte respaldado por ejemplos prácticos.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pyboard</p></td>
+<td><p>Placa oficial de MicroPython, diseñada específicamente para aprovechar las capacidades del lenguaje.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="caracteristicas-avanzadas">
+<h2>Características Avanzadas<a class="headerlink" href="#caracteristicas-avanzadas" title="Link to this heading">#</a></h2>
+<p>MicroPython combina el rendimiento en dispositivos con pocos recursos con la versatilidad de Python 3. Entre sus principales características se destacan:</p>
+<ul class="simple">
+<li><p>REPL interactivo para pruebas y depuración en tiempo real.</p></li>
+<li><p>Bibliotecas optimizadas para el manejo de pines GPIO, I2C, SPI, UART, etc.</p></li>
+<li><p>Eficiencia en el uso de recursos, ideal para microcontroladores.</p></li>
+<li><p>Compatibilidad con gran parte del ecosistema Python.</p></li>
+<li><p>Facilidad de integración y extensión para soluciones IoT y embebidas.</p></li>
+</ul>
+<section id="sintaxis-y-tipado-en-micropython">
+<h3>Sintaxis y Tipado en MicroPython<a class="headerlink" href="#sintaxis-y-tipado-en-micropython" title="Link to this heading">#</a></h3>
+<p>La sintaxis de MicroPython es similar a Python 3, con tipado dinámico que facilita el desarrollo. A continuación, se presenta una comparativa de sus características:</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-text">Comparativa de características</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Característica</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sintaxis Simplificada</p></td>
+<td><p>Legibilidad y estructura claras, heredadas de Python 3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tipado Dinámico</p></td>
+<td><p>No requiere declaración explícita de tipos.</p></td>
+</tr>
+<tr class="row-even"><td><p>Optimización para Hardware Limitado</p></td>
+<td><p>Funciones adaptadas para minimizar el consumo de memoria.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Amplia Compatibilidad</p></td>
+<td><p>Integración con gran parte del ecosistema y bibliotecas de Python.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mas-informacion-y-recursos">
+<h3>Más Información y Recursos<a class="headerlink" href="#mas-informacion-y-recursos" title="Link to this heading">#</a></h3>
+<p>Para profundizar en el uso de MicroPython se recomienda:</p>
+<ul class="simple">
+<li><p>Revisar la documentación oficial en el <a class="reference external" href="https://www.micropython.org/">sitio de MicroPython</a>.</p></li>
+<li><p>Participar en comunidades y foros especializados.</p></li>
+<li><p>Utilizar recursos interactivos y cursos en línea que faciliten la adopción del entorno.</p></li>
+</ul>
+</section>
+</section>
+<section id="comenzando-con-micropython">
+<h2>Comenzando con MicroPython<a class="headerlink" href="#comenzando-con-micropython" title="Link to this heading">#</a></h2>
+<p>Pasos para iniciar tu proyecto:</p>
+<ol class="arabic simple">
+<li><p>Descarga el firmware adecuado para tu placa desde el <a class="reference external" href="https://micropython.org/download/">sitio oficial</a>.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>A continuación, se presentan enlaces directos a los firmwares de MicroPython para ESP32 y RP2040:</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-text">Firmwares de MicroPython</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Placa</p></th>
+<th class="head"><p>Firmware</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESP32</p></td>
+<td><p><a class="reference external" href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/releases/download/Micropython_by_uelectronics/micropython_uelectronics_version2025_DualMCU.bin">Micropython DualMCU ESP32 bin</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>RP2040</p></td>
+<td><p><a class="reference external" href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/releases/download/Micropython_by_uelectronics/Micropython_DualMCU_2025_RP2040.uf2">Micropython DualMCU RP2040 uf2</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Requerido para flashear el firmware en el ESP32 o <a class="reference external" href="https://espressif.github.io/esptool-js/">esptools</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Conecta tu dispositivo mediante usando Thonny o cualquier otro IDE compatible con MicroPython.</p></li>
+<li><p>Consulta la <a class="reference external" href="https://unit-electronics-mx.github.io/wiki_uelectronics/es/docs/Development_boards/Compatibility_Arduino_upython/upython/">documentación y ejemplos para crear aplicaciones embebidas</a>, desde prototipos hasta soluciones IoT.</p></li>
+</ol>
+</section>
+<section id="bibliotecas-y-modulos">
+<h2>Bibliotecas y Módulos<a class="headerlink" href="#bibliotecas-y-modulos" title="Link to this heading">#</a></h2>
+<p>MicroPython ofrece un rico conjunto de módulos:</p>
+<ul class="simple">
+<li><p><strong>machine</strong>: Interacción con hardware (GPIO, I2C, SPI, UART, etc.).</p></li>
+<li><p><strong>network</strong>: Gestión de interfaces de red (Wi-Fi, Ethernet, etc.).</p></li>
+</ul>
+</section>
+<section id="ides-y-herramientas">
+<h2>IDEs y Herramientas<a class="headerlink" href="#ides-y-herramientas" title="Link to this heading">#</a></h2>
+<p>Entre las herramientas recomendadas para trabajar con MicroPython se encuentran:</p>
+<ul class="simple">
+<li><p><strong>Thonny</strong>: IDE sencillo y amigable, con soporte para MicroPython.</p></li>
+<li><p><strong>uPyCraft</strong>: IDE ligero que facilita la edición, transferencia de archivos y comunicación serial.</p></li>
+<li><p><strong>rshell</strong>: Herramienta de línea de comandos para gestionar archivos en la placa mediante conexión serial.</p></li>
+</ul>
+</section>
+</section>
+<section id="guia-de-instalacion-de-bibliotecas-con-mip">
+<h1>Guía de Instalación de Bibliotecas con MIP<a class="headerlink" href="#guia-de-instalacion-de-bibliotecas-con-mip" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El soporte directo para mip en RP2040 no está disponible. Se utiliza la biblioteca <cite>mip</cite> para instalar la biblioteca <cite>max1704x.py</cite>.</p>
+</div>
+<ul class="simple">
+<li><p>Dispositivo ESP32.</p></li>
+<li><p>IDE Thonny.</p></li>
+<li><p>Credenciales de Wi-Fi (SSID y contraseña).</p></li>
+</ul>
+<p>Para instalar la biblioteca <cite>max1704x.py</cite>, siga estos pasos:</p>
+<ol class="arabic simple">
+<li><p>Conecte a Wi-Fi ejecutando el siguiente código en Thonny:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mip</span>
+<span class="kn">import</span> <span class="nn">network</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">connect_wifi</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+  <span class="n">wlan</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">STA_IF</span><span class="p">)</span>
+  <span class="n">wlan</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">wlan</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">wlan</span><span class="o">.</span><span class="n">isconnected</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Conectado a la red Wi-Fi&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wlan</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No se pudo conectar a la red Wi-Fi&#39;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">ssid</span> <span class="o">=</span> <span class="s2">&quot;tu_ssid&quot;</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;tu_contraseña&quot;</span>
+
+<span class="n">ip_address</span> <span class="o">=</span> <span class="n">connect_wifi</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Instale las bibliotecas utilizando mip:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mip</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/UNIT-Electronics/MAX1704X_lib/refs/heads/main/Software/MicroPython/example/max1704x.py&#39;</span><span class="p">)</span>
+<span class="n">mip</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Cesarbautista10/Libraries_compatibles_with_micropython/refs/heads/main/Libs/oled.py&#39;</span><span class="p">)</span>
+<span class="n">mip</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Cesarbautista10/Libraries_compatibles_with_micropython/refs/heads/main/Libs/sdcard.py&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="biblioteca-dualmcu">
+<h2>Biblioteca DualMCU<a class="headerlink" href="#biblioteca-dualmcu" title="Link to this heading">#</a></h2>
+<p>Para trabajar con la placa DualMCU ONE se debe instalar la biblioteca DualMCU.</p>
+<ol class="arabic simple">
+<li><p>Instale Thonny desde el <a class="reference external" href="https://thonny.org/">sitio web de Thonny</a>.</p></li>
+<li><p>En Thonny, vaya a <strong>Herramientas</strong> -&gt; <strong>Administrar paquetes</strong>.</p></li>
+<li><p>Busque <code class="docutils literal notranslate"><span class="pre">dualmcu</span></code> y haga clic en <strong>Instalar</strong>.</p></li>
+</ol>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/dualmcu_library.png"><img alt="Biblioteca DualMCU" src="_images/dualmcu_library.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Biblioteca DualMCU</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Verifique la instalación visual en:</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/dualmcu_library_success.png"><img alt="Instalación exitosa de DualMCU" src="_images/dualmcu_library_success.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">DualMCU instalada correctamente</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Alternativamente, descargue la biblioteca desde <a class="reference external" href="https://pypi.org/project/dualmcu/">dualmcu.py</a>.</p>
+<p>La biblioteca DualMCU proporciona herramientas para trabajar con la placa DualMCU ONE. Ejemplo de uso básico:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">from</span> <span class="nn">dualmcu</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">SoftI2C</span><span class="p">(</span><span class="n">scl</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">21</span><span class="p">))</span>
+
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;UNIT&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;ELECTRONICS&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/dualmcu/">Dualmcu</a>: Herramientas para trabajar con la placa DualMCU ONE.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/ocks/">Ocks</a>: Soporte para comunicación I2C.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/sdcard-lib/">SDcard-lib</a>: Gestión de tarjetas SD.</p></li>
+</ul>
+<p>Para más información y actualizaciones, visite el <a href="#id6"><span class="problematic" id="id7">`repositorio de GitHub dualmcu`__</span></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MicroPython</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibilidad-de-placas">Compatibilidad de Placas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-avanzadas">Características Avanzadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-y-tipado-en-micropython">Sintaxis y Tipado en MicroPython</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-informacion-y-recursos">Más Información y Recursos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comenzando-con-micropython">Comenzando con MicroPython</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-y-modulos">Bibliotecas y Módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ides-y-herramientas">IDEs y Herramientas</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-de-instalacion-de-bibliotecas-con-mip">Guía de Instalación de Bibliotecas con MIP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biblioteca-dualmcu">Biblioteca DualMCU</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Cesar Bautista
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Unit Electronics.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

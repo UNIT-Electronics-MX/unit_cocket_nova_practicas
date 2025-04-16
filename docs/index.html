@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Guía de usuario - Prácticas &#8212; documentación de UNIT DevLab desde cero - 0.0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=0023b8e2"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=00122899"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Cocket Nova CH552" href="0_0_about.html" />
+    <link rel="icon" href="_static/3.png" type="image/x-icon">
+    <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-light" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>
+    <script>document.write(`<img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-dark" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas digitales</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="5_spi.html">SPI (Interfaz Periférica Serial)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_USB.html">Interfaz USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Guía de usuario - Prácticas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Guía de usuario - Prácticas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-y-tablas">Índices y tablas</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="guia-de-usuario-practicas">
+<h1>Guía de usuario - Prácticas<a class="headerlink" href="#guia-de-usuario-practicas" title="Link to this heading">#</a></h1>
+<p>Bienvenido al repositorio de prácticas para la tarjeta de desarrollo CH552G. Este recurso está diseñado para proporcionar un aprendizaje completo y estructurado a aquellos interesados en aprovechar las capacidades de los microcontroladores de bajos recursos, con un enfoque en una amplia gama de aplicaciones prácticas. Cada práctica se centra en aspectos específicos, como la programación de LEDs, el uso de sensores analógicos, aplicaciones en sistemas de monitoreo y la comunicación con pantallas, entre otros.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/CH552.png"><img alt="CH552G" src="_images/CH552.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 1 </span><span class="caption-text">Cocket Nova (Imagen de referencia)</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El objetivo de este repositorio es ofrecer un recurso integral que permita a los usuarios explorar y experimentar con diversas funcionalidades de la tarjeta CH552G. A través de ejemplos prácticos y explicaciones detalladas, los usuarios podrán adquirir habilidades valiosas en programación y electrónica, lo que les permitirá desarrollar proyectos innovadores y creativos.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="0_0_about.html#por-que-usar-el-compilador-sdcc">¿Por qué usar el compilador SDCC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0_0_about.html#entendiendo-los-lenguajes-de-programacion-en-sistemas-embebidos">Entendiendo los Lenguajes de Programación en Sistemas Embebidos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0_0_about.html#requisitos">Requisitos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0_0_about.html#pinout">PinOut</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="0_1_jst.html#ejemplo-de-conexion-con-la-placa-dualmcu-one">Ejemplo de conexión con la placa DualMCU ONE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0_1_jst.html#ejemplo-de-integracion-del-conector-jst-sh-1-0mm-4-pines">Ejemplo de integración del conector JST SH 1.0mm 4 pines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas digitales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_outputDigital.html#parpadeo-blink">Parpadeo (blink)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html#modulacion-por-ancho-de-pulso-pwm">Modulación por ancho de pulso (PWM)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_outputDigital.html#implementacion">Implementación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_inputDigital.html#pull-up-y-pull-down">Pull-up y Pull-down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_inputDigital.html#lectura-de-entradas">Lectura de Entradas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_inputDigital.html#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_adc.html#definicion-de-adc">Definición de ADC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_adc.html#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_i2c.html#descripcion-general-del-i2c">Descripción General del I2C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_i2c.html#ejemplo-de-aplicacion-pantalla-ssd1306">Ejemplo de aplicación Pantalla SSD1306</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_i2c.html#cocket-nova-implementacion-de-i2c">Cocket Nova implementación de I2C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4_i2c.html#ejemplo-de-integracion">Ejemplo de Integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_spi.html">SPI (Interfaz Periférica Serial)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_spi.html#vision-general-del-protocolo-spi">Visión General del protocolo SPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6_USB.html">Interfaz USB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_USB.html#hid-dispositivo-de-interfaz-humano">HID (Dispositivo de Interfaz Humano)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_USB.html#cdc-clase-de-dispositivo-de-comunicacion">CDC (Clase de Dispositivo de Comunicación)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="7_WS2812.html#control-ws2812-con-sdcc">Control WS2812 con SDCC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report.html#pasos-para-crear-un-informe-de-error">Pasos para Crear un Informe de Error:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-y-tablas">
+<h1>Índices y tablas<a class="headerlink" href="#indices-y-tablas" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Índice</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Índice de Módulos</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Página de Búsqueda</span></a></p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="0_0_about.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Cocket Nova CH552</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Guía de usuario - Prácticas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-y-tablas">Índices y tablas</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Cesar Bautista
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Unit Electronics.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

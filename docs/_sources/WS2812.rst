@@ -1,0 +1,29 @@
+Control WS2812 
+=================
+Aprovecha el poder de las tiras LED WS1280 con la placa DualMCU ONE. Aprende a controlar tiras LED RGB y a crear impresionantes efectos de iluminación usando MicroPython.
+
+Esta sección describe cómo controlar las tiras LED WS2812 utilizando la placa DualMCU ONE.
+La placa DualMCU ONE tiene un pin GPIO incorporado conectado al LED WS2812 único.
+
+.. _figura-neo:
+
+.. figure:: /_static/neo.jpg
+    :align: center
+    :alt: led rgb
+    :width: 40%
+
+    Tira LED WS2812
+
+Ejemplo de Código
+------------------
+A continuación se muestra un ejemplo que demuestra cómo controlar las tiras LED WS1280 utilizando la placa DualMCU ONE:: 
+     
+     from machine import Pin
+     from neopixel import NeoPixel
+     np = NeoPixel(Pin(24), 1)
+     np[0] = (255, 128, 0) # establecer a rojo, brillo completo
+
+     np.write()
+
+..  tip::
+     para obtener más información sobre la biblioteca NeoPixel, consulta la `Documentación de la Biblioteca NeoPixel <https://github.com/lvidarte/esp8266/wiki/MicroPython:-NeoPixels>`_.
