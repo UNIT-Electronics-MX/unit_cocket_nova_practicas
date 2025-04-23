@@ -1,39 +1,35 @@
-Salidas digitales 
-==================
+Salidas Digitales
+=================
 
-Las salidas digitales son una forma de interactuar con el mundo exterior. En la mayoría de los microcontroladores, las salidas digitales se utilizan para encender o apagar LEDs, activar relés, controlar motores y más.
-
+Las salidas digitales facilitan la interacción con dispositivos externos. En los microcontroladores, se emplean para activar o desactivar LEDs, controlar relés, gestionar motores, entre otras aplicaciones.
 
 .. tip::
      Open-drain y Open-collector
 
-     Algunos microcontroladores tienen salidas de drenaje abierto (open-drain) o colector abierto (open-collector). Estas salidas son útiles para la conexión de dispositivos de alta corriente o para la comunicación bidireccional.
+     Algunos microcontroladores incluyen salidas de drenaje abierto (open-drain) o de colector abierto (open-collector). Estas configuraciones son ideales para manejar dispositivos con alta demanda de corriente o para establecer comunicaciones bidireccionales.
 
-     - **Open-drain**: La salida puede conectarse a tierra (GND) pero no a VCC.
-     - **Open-collector**: La salida puede conectarse a VCC pero no a tierra (GND).
+     - **Open-drain**: Permite conectar la salida a tierra (GND), pero no a VCC.
+     - **Open-collector**: Permite conectar la salida a VCC, pero no a tierra (GND).
 
-.. warning:: 
-    MicroPython no se encuentra disponible para la placa de desarrollo Cocket Nova su ejemplo es solo para SDCC.
+Parpadeo de LED (Blink)
+-----------------------
 
-Parpadeo (blink)
-----------------
+El parpadeo de un LED es un proyecto clásico en la introducción a los microcontroladores. Aunque el código varíe entre Arduino IDE y SDCC, el objetivo principal es lograr un efecto de parpadeo en el LED.
 
-Un parpadeo de LED es un proyecto común para comenzar con microcontroladores. Lo que no te dicen es la equivalencia de un parpadeo en diferentes plataformas. Para Arduino IDE o SDCC puede difererir en la cantidad de líneas de código, pero el resultado es el mismo: un LED que parpadea.
 
 .. tip:: 
-    Con frecuencia, las tarjetas de desarrollo tienen un LED integrado en un pin específico, como el pin 13 en Arduino Uno o el pin 25 en la tarjeta de desarrollo Raspberry Pi Pico.
 
-En la tarjeta de desarrollo Cocket Nova, el LED integrado está conectado al pin 34. Para encenderlo, se debe configurar el pin como salida y luego alternar su estado entre alto (HIGH) y bajo (LOW).
+     En la tarjeta de desarrollo Cocket Nova, el LED integrado está conectado al pin 34. Para encenderlo, se debe configurar el pin como salida y luego alternar su estado entre alto (HIGH) y bajo (LOW).
 
 .. _figura-LED:
 
-.. figure::  /_static/RGB_LED.jpg
+.. figure::  /_static/cocket/led.jpg
     :align: center
     :alt: LEDs
     :width: 30%
 
-    RGB_LED
-
+    LED integrado
+ 
 Arduino IDE y SDCC 
 ~~~~~~~~~~~~~~~~~~
 
@@ -48,24 +44,7 @@ Arduino IDE y SDCC
 
 .. tabs::
 
-     .. tab:: C++
 
-          .. code-block:: cpp
-
-                #define LED_BUILTIN 34
-
-                void setup() {
-                    pinMode(LED_BUILTIN, OUTPUT);
-                }
-
-                void loop() {
-                    digitalWrite(LED_BUILTIN, HIGH); 
-                    delay(500);
-                    digitalWrite(LED_BUILTIN, LOW);    
-                    delay(500);
-                }
-
-     
      .. tab:: SDCC
 
           .. code-block:: c
@@ -89,14 +68,58 @@ Arduino IDE y SDCC
                     }
                 }
 
+     .. tab:: C++
+
+          .. code-block:: cpp
+
+                #define LED_BUILTIN 34
+
+                void setup() {
+                    pinMode(LED_BUILTIN, OUTPUT);
+                }
+
+                void loop() {
+                    digitalWrite(LED_BUILTIN, HIGH); 
+                    delay(500);
+                    digitalWrite(LED_BUILTIN, LOW);    
+                    delay(500);
+                }
+
+     
+
+
 Aplicaciones
 ~~~~~~~~~~~~
-Contador binarios 4 bits
+Contador binarios 3 bits
+
+.. figure:: /_static/cocket/semaforo.jpg
+    :align: center
+    :alt: contador binario
+    :width: 50%
+
+    Semáforo (ejemplo de contador binario)
+
+.. list-table:: LED Connections
+     :header-rows: 1
+
+     * - Pin
+       - Description
+     * - GND
+       - Común
+     * - R
+       - led rojo
+     * - Y
+       - led amarillo
+     * - G
+       - led verde
 
 
+.. figure:: /_static/schematic_block_1.png
+    :align: center
+    :alt: Diagrama pictorico
+    :width: 50%
 
-
-
+     Diagrama pictórico del contador binario
 
 Modulación por ancho de pulso (PWM)
 ===================================

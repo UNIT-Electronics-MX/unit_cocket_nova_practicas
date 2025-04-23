@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Control WS2812 &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
+    <title>SDK Docker CH55x Unit &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
   
   
   
@@ -53,9 +53,11 @@
     <script src="_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'WS2812';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0_2_1_sdk';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Salidas Digitales" href="1_outputDigital.html" />
+    <link rel="prev" title="Conector JST SH 1.0mm 4 pines" href="0_1_jst.html" />
     <link rel="icon" href="_static/3.png" type="image/x-icon">
     <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
 
@@ -119,8 +121,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -169,10 +169,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SDK Docker CH55x Unit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas Digitales</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a></li>
@@ -255,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/WS2812.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/0_2_1_sdk.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2FWS2812.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2F0_2_1_sdk.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="_sources/WS2812.rst" target="_blank"
+      <li><a href="_sources/0_2_1_sdk.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Control WS2812</h1>
+    <h1>SDK Docker CH55x Unit</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,7 +396,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-codigo">Ejemplo de Código</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comun-todas-las-plataformas">Común (Todas las plataformas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">Instalación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-la-imagen-de-docker">Construir la imagen de Docker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-nuevo-proyecto">Crear un Nuevo Proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-ayuda">Mostrar ayuda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilar-un-proyecto">Compilar un proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-make-clean-all-hex-etc">Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salida">Salida</a></li>
 </ul>
             </nav>
         </div>
@@ -408,32 +424,132 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="control-ws2812">
-<h1>Control WS2812<a class="headerlink" href="#control-ws2812" title="Link to this heading">#</a></h1>
-<p>Aprovecha el poder de las tiras LED WS1280 con la placa DualMCU ONE. Aprende a controlar tiras LED RGB y a crear impresionantes efectos de iluminación usando MicroPython.</p>
-<p>Esta sección describe cómo controlar las tiras LED WS2812 utilizando la placa DualMCU ONE.
-La placa DualMCU ONE tiene un pin GPIO incorporado conectado al LED WS2812 único.</p>
-<figure class="align-center" id="id1">
-<span id="figura-neo"></span><a class="reference internal image-reference" href="_images/neo.jpg"><img alt="led rgb" src="_images/neo.jpg" style="width: 40%;" /></a>
-<figcaption>
-<p><span class="caption-text">Tira LED WS2812</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="ejemplo-de-codigo">
-<h2>Ejemplo de Código<a class="headerlink" href="#ejemplo-de-codigo" title="Link to this heading">#</a></h2>
-<p>A continuación se muestra un ejemplo que demuestra cómo controlar las tiras LED WS1280 utilizando la placa DualMCU ONE:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
-<span class="kn">from</span> <span class="nn">neopixel</span> <span class="kn">import</span> <span class="n">NeoPixel</span>
-<span class="n">np</span> <span class="o">=</span> <span class="n">NeoPixel</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">np</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># establecer a rojo, brillo completo</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+  <section id="sdk-docker-ch55x-unit">
+<h1>SDK Docker CH55x Unit<a class="headerlink" href="#sdk-docker-ch55x-unit" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>SDK portátil para el desarrollo de firmware CH552 usando SDCC en contenedores Docker. Incluye una herramienta de línea de comandos multiplataforma (<cite>spkg</cite>) para simplificar la compilación tanto en Linux como en Windows.</p>
+</div>
+<section id="estructura-del-proyecto">
+<h2>Estructura del Proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Link to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ch552-docker-sdk/
+├── spkg/                   # Sistema de construcción CLI autónomo
+│   ├── spkg                # Lanzador CLI (script bash)
+│   ├── Dockerfile          # Entorno de construcción basado en SDCC
+│   └── docker-compose.yml  # Configuración del contenedor
+├── template/               # Proyectos de ejemplo para CH552
+│   └── Blink/              # Ejemplo Blink (main.c, src/, tools/, Makefile)
+└── README.md
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Truco</p>
-<p>para obtener más información sobre la biblioteca NeoPixel, consulta la <a class="reference external" href="https://github.com/lvidarte/esp8266/wiki/MicroPython:-NeoPixels">Documentación de la Biblioteca NeoPixel</a>.</p>
+</section>
+<section id="caracteristicas-principales">
+<h2>Características Principales<a class="headerlink" href="#caracteristicas-principales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Herramienta de línea de comandos unificada: «spkg» disponible en Linux y Windows (usando Git Bash).</p></li>
+<li><p>No requiere la instalación manual de SDCC ni de otros toolchains.</p></li>
+<li><p>Emplea contenedores Docker para proporcionar un entorno de compilación completamente aislado.</p></li>
+<li><p>Basado en un sistema de proyectos con Makefile, compatible con los microcontroladores CH552/CH55x.</p></li>
+<li><p>Incluye un proyecto de ejemplo ubicado en el directorio <code class="docutils literal notranslate"><span class="pre">template/</span></code>.</p></li>
+</ul>
+</section>
+<section id="requisitos">
+<h2>Requisitos<a class="headerlink" href="#requisitos" title="Link to this heading">#</a></h2>
+<section id="comun-todas-las-plataformas">
+<h3>Común (Todas las plataformas)<a class="headerlink" href="#comun-todas-las-plataformas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></p></li>
+</ul>
+</section>
+<section id="linux-macos">
+<h3>Linux/macOS<a class="headerlink" href="#linux-macos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Git</p></li>
+<li><p>Python 3</p></li>
+<li><p>Shell Bash</p></li>
+<li><p>Privilegios de superusuario requeridos para ejecutar Docker</p></li>
+</ul>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitforwindows.org/">Git Bash</a></p></li>
+<li><p>Docker Desktop con backend WSL2 o Hyper-V habilitado</p></li>
+<li><p>MinGW64 (incluido con Git Bash) para el comando <code class="docutils literal notranslate"><span class="pre">make</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Ejecutar <code class="docutils literal notranslate"><span class="pre">spkg</span></code> en Linux puede requerir <code class="docutils literal notranslate"><span class="pre">sudo</span></code> si el usuario no forma parte del grupo <code class="docutils literal notranslate"><span class="pre">docker</span></code>. Puedes agregar a tu usuario con:
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-aG</span> <span class="pre">docker</span> <span class="pre">$USER</span> <span class="pre">&amp;&amp;</span> <span class="pre">newgrp</span> <span class="pre">docker</span></code></p>
 </div>
+</section>
+</section>
+<section id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Link to this heading">#</a></h2>
+<p>Clona el repositorio:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+<span class="nb">cd</span><span class="w"> </span>ch552-docker-sdk/spkg
+chmod<span class="w"> </span>+x<span class="w"> </span>spkg
+</pre></div>
+</div>
+<p>(Optional) Instálalo globalmente:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/spkg&quot;</span><span class="w"> </span>/usr/local/bin/spkg
+</pre></div>
+</div>
+<p>Ahora puedes ejecutar <code class="docutils literal notranslate"><span class="pre">spkg</span></code> desde cualquier ubicación.</p>
+<section id="construir-la-imagen-de-docker">
+<h3>Construir la imagen de Docker<a class="headerlink" href="#construir-la-imagen-de-docker" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>compose
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Asegurate de que Docker esté en ejecución y que tu usuario tenga permisos para ejecutarlo.
+Puedes verificarlo ejecutando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. Si no ves errores, Docker está funcionando correctamente.</p>
+</div>
+</section>
+<section id="crear-un-nuevo-proyecto">
+<h3>Crear un Nuevo Proyecto<a class="headerlink" href="#crear-un-nuevo-proyecto" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Este comando creará un nuevo directorio con el nombre especificado.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>init<span class="w"> </span>template/project
+</pre></div>
+</div>
+</section>
+<section id="mostrar-ayuda">
+<h3>Mostrar ayuda<a class="headerlink" href="#mostrar-ayuda" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>--help
+</pre></div>
+</div>
+</section>
+<section id="compilar-un-proyecto">
+<h3>Compilar un proyecto<a class="headerlink" href="#compilar-un-proyecto" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink
+</pre></div>
+</div>
+</section>
+<section id="ejecutar-make-clean-all-hex-etc">
+<h3>Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.<a class="headerlink" href="#ejecutar-make-clean-all-hex-etc" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>clean
+spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>all
+spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>hex
+</pre></div>
+</div>
+</section>
+</section>
+<section id="salida">
+<h2>Salida<a class="headerlink" href="#salida" title="Link to this heading">#</a></h2>
+<p>El binario compilado se generará en:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>template/Blink/build/main.bin
+</pre></div>
+</div>
+<p>Puedes flashearlo usando:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tools/chprog.py</span></code></p></li>
+<li><p><a class="reference external" href="https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html">WCHISPTool</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -448,6 +564,24 @@ La placa DualMCU ONE tiene un pin GPIO incorporado conectado al LED WS2812 únic
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0_1_jst.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Conector JST SH 1.0mm 4 pines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_outputDigital.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Salidas Digitales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -464,7 +598,23 @@ La placa DualMCU ONE tiene un pin GPIO incorporado conectado al LED WS2812 únic
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-codigo">Ejemplo de Código</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comun-todas-las-plataformas">Común (Todas las plataformas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">Instalación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-la-imagen-de-docker">Construir la imagen de Docker</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-nuevo-proyecto">Crear un Nuevo Proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-ayuda">Mostrar ayuda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilar-un-proyecto">Compilar un proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-make-clean-all-hex-etc">Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salida">Salida</a></li>
 </ul>
   </nav></div>
 

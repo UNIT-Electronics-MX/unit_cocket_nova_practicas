@@ -1,26 +1,27 @@
 Entradas digitales
 ==================
 
-Las entradas digitales son una forma de interactuar con el mundo exterior. En la mayoría de los microcontroladores, las entradas digitales se utilizan para leer el estado de un botón, un sensor digital, un interruptor y más.
+Entradas Digitales
+==================
 
-Pull-up y Pull-down
--------------------
+Las entradas digitales permiten la interacción directa entre el microcontrolador y el entorno. Se emplean habitualmente para monitorear el estado de botones, sensores y otros dispositivos digitales.
 
-La mayoría de los microcontroladores tienen resistencias pull-up y pull-down internas. Estas resistencias se utilizan para mantener un valor lógico alto o bajo en una entrada digital cuando no se aplica una señal externa.
+Resistencias Internas Pull-up y Pull-down
+-----------------------------------------
 
-- **Pull-up**: La resistencia pull-up conecta la entrada a VCC (nivel alto).
-- **Pull-down**: La resistencia pull-down conecta la entrada a tierra (nivel bajo).
+La mayoría de los microcontroladores incluyen resistencias internas pull-up y pull-down que aseguran un nivel lógico definido cuando no se aplica una señal externa:
 
-Estas resistencias pueden activarse o desactivarse mediante software. En algunos microcontroladores, como el CH552, las resistencias pull-up y pull-down se pueden configurar con un valor de resistencia específico. 
+- **Pull-up**: Conecta la entrada a VCC, garantizando un nivel lógico alto.
+- **Pull-down**: Conecta la entrada a tierra, asegurando un nivel lógico bajo.
 
-También es posible utilizar resistencias externas para pull-up y pull-down. Esto es útil cuando se necesita un valor de resistencia específico o cuando las resistencias internas no son suficientes.
+Estas resistencias pueden habilitarse o deshabilitarse mediante software. Por ejemplo, en el microcontrolador CH552 se puede configurar una resistencia interna con un valor específico, adaptándose a los requerimientos del diseño.
 
+Asimismo, es posible utilizar resistencias externas para obtener un valor de resistencia determinado o cuando las resistencias internas no son suficientes.
 
 Lectura de Entradas
 -------------------
 
-La lectura de una entrada digital en un microcontrolador es un proceso sencillo. La entrada puede estar en uno de dos estados: alto (HIGH) o bajo (LOW). En la mayoría de los microcontroladores, el estado alto corresponde a un valor lógico de 1 y el estado bajo a un valor lógico de 0.
-
+El proceso de lectura de una entrada digital es sencillo. El estado de la entrada se limita a dos valores posibles: alto (HIGH) y bajo (LOW), que corresponden a los niveles lógicos 1 y 0 respectivamente.
 
 
 .. only:: html

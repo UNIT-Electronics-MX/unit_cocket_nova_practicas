@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Entradas digitales &#8212; documentación de UNIT DevLab desde cero - 0.0.1</title>
+    <title>Entradas digitales &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
   
   
   
@@ -58,7 +58,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Conversión de Analógico a Digital" href="3_adc.html" />
-    <link rel="prev" title="Salidas digitales" href="1_outputDigital.html" />
+    <link rel="prev" title="Salidas Digitales" href="1_outputDigital.html" />
     <link rel="icon" href="_static/3.png" type="image/x-icon">
     <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
 
@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-light" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>
-    <script>document.write(`<img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-dark" alt="documentación de UNIT DevLab desde cero - 0.0.1 - Home"/>`);</script>
+    <img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-light" alt="documentación de Practicario DevLab Cocket Nova - 0.0.1 - Home"/>
+    <script>document.write(`<img src="_static/Logo-UNIT_Web-04-800x182.png" class="logo__image only-dark" alt="documentación de Practicario DevLab Cocket Nova - 0.0.1 - Home"/>`);</script>
   
   
 </a></div>
@@ -173,9 +173,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas digitales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas Digitales</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Entradas digitales</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
 
@@ -395,10 +397,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-up-y-pull-down">Pull-up y Pull-down</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entradas digitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Entradas Digitales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistencias-internas-pull-up-y-pull-down">Resistencias Internas Pull-up y Pull-down</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-entradas">Lectura de Entradas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -411,20 +418,23 @@ document.write(`
                   
   <section id="entradas-digitales">
 <h1>Entradas digitales<a class="headerlink" href="#entradas-digitales" title="Link to this heading">#</a></h1>
-<p>Las entradas digitales son una forma de interactuar con el mundo exterior. En la mayoría de los microcontroladores, las entradas digitales se utilizan para leer el estado de un botón, un sensor digital, un interruptor y más.</p>
-<section id="pull-up-y-pull-down">
-<h2>Pull-up y Pull-down<a class="headerlink" href="#pull-up-y-pull-down" title="Link to this heading">#</a></h2>
-<p>La mayoría de los microcontroladores tienen resistencias pull-up y pull-down internas. Estas resistencias se utilizan para mantener un valor lógico alto o bajo en una entrada digital cuando no se aplica una señal externa.</p>
+</section>
+<section id="id1">
+<h1>Entradas Digitales<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Las entradas digitales permiten la interacción directa entre el microcontrolador y el entorno. Se emplean habitualmente para monitorear el estado de botones, sensores y otros dispositivos digitales.</p>
+<section id="resistencias-internas-pull-up-y-pull-down">
+<h2>Resistencias Internas Pull-up y Pull-down<a class="headerlink" href="#resistencias-internas-pull-up-y-pull-down" title="Link to this heading">#</a></h2>
+<p>La mayoría de los microcontroladores incluyen resistencias internas pull-up y pull-down que aseguran un nivel lógico definido cuando no se aplica una señal externa:</p>
 <ul class="simple">
-<li><p><strong>Pull-up</strong>: La resistencia pull-up conecta la entrada a VCC (nivel alto).</p></li>
-<li><p><strong>Pull-down</strong>: La resistencia pull-down conecta la entrada a tierra (nivel bajo).</p></li>
+<li><p><strong>Pull-up</strong>: Conecta la entrada a VCC, garantizando un nivel lógico alto.</p></li>
+<li><p><strong>Pull-down</strong>: Conecta la entrada a tierra, asegurando un nivel lógico bajo.</p></li>
 </ul>
-<p>Estas resistencias pueden activarse o desactivarse mediante software. En algunos microcontroladores, como el CH552, las resistencias pull-up y pull-down se pueden configurar con un valor de resistencia específico.</p>
-<p>También es posible utilizar resistencias externas para pull-up y pull-down. Esto es útil cuando se necesita un valor de resistencia específico o cuando las resistencias internas no son suficientes.</p>
+<p>Estas resistencias pueden habilitarse o deshabilitarse mediante software. Por ejemplo, en el microcontrolador CH552 se puede configurar una resistencia interna con un valor específico, adaptándose a los requerimientos del diseño.</p>
+<p>Asimismo, es posible utilizar resistencias externas para obtener un valor de resistencia determinado o cuando las resistencias internas no son suficientes.</p>
 </section>
 <section id="lectura-de-entradas">
 <h2>Lectura de Entradas<a class="headerlink" href="#lectura-de-entradas" title="Link to this heading">#</a></h2>
-<p>La lectura de una entrada digital en un microcontrolador es un proceso sencillo. La entrada puede estar en uno de dos estados: alto (HIGH) o bajo (LOW). En la mayoría de los microcontroladores, el estado alto corresponde a un valor lógico de 1 y el estado bajo a un valor lógico de 0.</p>
+<p>El proceso de lectura de una entrada digital es sencillo. El estado de la entrada se limita a dos valores posibles: alto (HIGH) y bajo (LOW), que corresponden a los niveles lógicos 1 y 0 respectivamente.</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/input.gif"><img alt="figura-gif" src="_images/input.gif" style="width: 60%;" /></a>
 </figure>
@@ -501,7 +511,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Salidas digitales</p>
+        <p class="prev-next-title">Salidas Digitales</p>
       </div>
     </a>
     <a class="right-next"
@@ -529,10 +539,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-up-y-pull-down">Pull-up y Pull-down</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entradas digitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Entradas Digitales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistencias-internas-pull-up-y-pull-down">Resistencias Internas Pull-up y Pull-down</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-entradas">Lectura de Entradas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

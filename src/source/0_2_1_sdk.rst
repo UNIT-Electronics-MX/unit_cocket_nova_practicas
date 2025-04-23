@@ -1,0 +1,133 @@
+SDK Docker CH55x Unit
+=====================
+
+.. note::
+    SDK portátil para el desarrollo de firmware CH552 usando SDCC en contenedores Docker. Incluye una herramienta de línea de comandos multiplataforma (`spkg`) para simplificar la compilación tanto en Linux como en Windows.
+
+
+Estructura del Proyecto
+-----------------------
+
+.. code-block:: none
+
+    ch552-docker-sdk/
+    ├── spkg/                   # Sistema de construcción CLI autónomo
+    │   ├── spkg                # Lanzador CLI (script bash)
+    │   ├── Dockerfile          # Entorno de construcción basado en SDCC
+    │   └── docker-compose.yml  # Configuración del contenedor
+    ├── template/               # Proyectos de ejemplo para CH552
+    │   └── Blink/              # Ejemplo Blink (main.c, src/, tools/, Makefile)
+    └── README.md
+
+
+Características Principales
+---------------------------
+
+- Herramienta de línea de comandos unificada: "spkg" disponible en Linux y Windows (usando Git Bash).
+- No requiere la instalación manual de SDCC ni de otros toolchains.
+- Emplea contenedores Docker para proporcionar un entorno de compilación completamente aislado.
+- Basado en un sistema de proyectos con Makefile, compatible con los microcontroladores CH552/CH55x.
+- Incluye un proyecto de ejemplo ubicado en el directorio ``template/``.
+
+Requisitos
+----------
+
+Común (Todas las plataformas)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `Docker Desktop <https://www.docker.com/products/docker-desktop>`_
+
+Linux/macOS
+~~~~~~~~~~~
+- Git
+- Python 3
+- Shell Bash
+- Privilegios de superusuario requeridos para ejecutar Docker
+
+Windows
+~~~~~~~
+- `Git Bash <https://gitforwindows.org/>`_
+- Docker Desktop con backend WSL2 o Hyper-V habilitado
+- MinGW64 (incluido con Git Bash) para el comando ``make``
+
+.. note::
+    Ejecutar ``spkg`` en Linux puede requerir ``sudo`` si el usuario no forma parte del grupo ``docker``. Puedes agregar a tu usuario con:  
+    ``sudo usermod -aG docker $USER && newgrp docker``
+
+Instalación
+-----------
+
+Clona el repositorio:
+
+.. code-block:: bash
+
+    git clone git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
+    cd ch552-docker-sdk/spkg
+    chmod +x spkg
+
+(Optional) Instálalo globalmente:
+
+.. code-block:: bash
+
+    sudo ln -s "$(pwd)/spkg" /usr/local/bin/spkg
+
+Ahora puedes ejecutar ``spkg`` desde cualquier ubicación.
+
+Construir la imagen de Docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    spkg compose
+
+.. warning::
+    Asegurate de que Docker esté en ejecución y que tu usuario tenga permisos para ejecutarlo.
+    Puedes verificarlo ejecutando ``docker ps``. Si no ves errores, Docker está funcionando correctamente.
+
+
+Crear un Nuevo Proyecto
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    Este comando creará un nuevo directorio con el nombre especificado.
+
+
+.. code-block:: bash
+
+    ./spkg/spkg init template/project
+
+
+Mostrar ayuda
+~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    spkg --help
+
+Compilar un proyecto
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    spkg -p ./template/Blink
+
+Ejecutar ``make clean``, ``all``, ``hex``, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    spkg -p ./template/Blink clean
+    spkg -p ./template/Blink all
+    spkg -p ./template/Blink hex
+
+
+Salida
+------
+
+El binario compilado se generará en:
+
+.. code-block:: none
+
+    template/Blink/build/main.bin
+
+Puedes flashearlo usando:
+
+- ``tools/chprog.py``
+- `WCHISPTool <https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html>`_
+
