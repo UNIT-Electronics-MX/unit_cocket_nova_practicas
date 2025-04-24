@@ -27,7 +27,29 @@ HID (Human Interface Device) es un protocolo de comunicación USB que permite a 
         <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples/tree/main/Software/examples/USB/USB-HID" target="_blank">HID device</a></td>
     </tr>
    </table>
-   
+
+.. only:: html
+
+   .. raw:: html
+
+      <iframe src="_static/processing/cube.html" width="660" height="400" style="border:none;"></iframe>
+
+
+.. only:: html
+
+    .. figure:: /_static/usb/cursor.gif
+        :align: center
+        :alt: figura-gif
+        :width: 60%
+
+
+
+.. only:: html
+
+    .. figure:: /_static/usb/keyboard.gif
+        :align: center
+        :alt: figura-gif
+        :width: 60%
 
 CDC (Clase de Dispositivo de Comunicación)
 ------------------------------------------

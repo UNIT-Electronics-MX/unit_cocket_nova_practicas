@@ -1,6 +1,3 @@
-Entradas digitales
-==================
-
 Entradas Digitales
 ==================
 
@@ -91,4 +88,13 @@ Arduino IDE y SDCC
                 }
             }
             }
-            
+
+Aplicaciones
+-------------
+
+.. figure:: /_static/pwm_motor/button.png
+    :align: center
+    :alt: figura-gif
+    :width: 60%
+
+    Aplicación de entrada digital

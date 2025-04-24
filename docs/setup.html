@@ -175,12 +175,10 @@
 <li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas Digitales</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas Digitales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="5_spi.html">SPI (Interfaz Periférica Serial)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6_USB.html">Interfaz USB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a></li>
@@ -451,7 +449,7 @@ The following steps will guide you through the setup process.</p>
 <li><p>Run the installer and follow the instructions.</p></li>
 </ol>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/python.png"><img alt="_images/python.png" src="_images/python.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_static/python.png"><img alt="_static/python.png" src="_static/python.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text">Add python to PATH</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
@@ -498,7 +496,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 <li><p>Run the installer and follow the instructions.</p></li>
 </ol>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/mingw.png"><img alt="_images/mingw.png" src="_images/mingw.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_static/mingw.png"><img alt="_static/mingw.png" src="_static/mingw.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text">MinGW installer</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
@@ -513,7 +511,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 </ul>
 </div>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="_images/mingw2.png"><img alt="_images/mingw2.png" src="_images/mingw2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_static/mingw2.png"><img alt="_static/mingw2.png" src="_static/mingw2.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text">MinGW installation</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
@@ -536,7 +534,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 <h3>Locate the file<a class="headerlink" href="#locate-the-file" title="Link to this heading">#</a></h3>
 <p>After installing MinGW, you will need to locate the <cite>mingw32-make.exe</cite> file. This file is typically found in the <cite>C:/MinGW/bin</cite> directory. Once located, rename the file to <cite>make.exe</cite>.</p>
 <figure class="align-center" id="id4">
-<span id="make-file"></span><a class="reference internal image-reference" href="_images/make_file.png"><img alt="Locating the mingw32-make.exe file." src="_images/make_file.png" style="width: 90%;" /></a>
+<span id="make-file"></span><a class="reference internal image-reference" href="_static/make_file.png"><img alt="Locating the mingw32-make.exe file." src="_static/make_file.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-text">Locating the <cite>mingw32-make.exe</cite> file</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
@@ -546,7 +544,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 <h3>Rename it<a class="headerlink" href="#rename-it" title="Link to this heading">#</a></h3>
 <p>After locating <cite>mingw32-make.exe</cite>, rename it to <cite>make.exe</cite>. This change is necessary for compatibility with many build scripts that expect the command to be named <cite>make</cite>.</p>
 <figure class="align-center" id="id5">
-<span id="rename"></span><a class="reference internal image-reference" href="_images/rename.png"><img alt="Renaming mingw32-make.exe to make.exe." src="_images/rename.png" style="width: 90%;" /></a>
+<span id="rename"></span><a class="reference internal image-reference" href="_static/rename.png"><img alt="Renaming mingw32-make.exe to make.exe." src="_static/rename.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-text">Renaming <cite>mingw32-make.exe</cite> to <cite>make.exe</cite></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
@@ -570,7 +568,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 </li>
 </ol>
 <figure class="align-center" id="id6">
-<span id="var-env"></span><a class="reference internal image-reference" href="_images/var_env.png"><img alt="Adding MinGW bin directory to environment variables." src="_images/var_env.png" style="width: 60%;" /></a>
+<span id="var-env"></span><a class="reference internal image-reference" href="_static/var_env.png"><img alt="Adding MinGW bin directory to environment variables." src="_static/var_env.png" style="width: 60%;" /></a>
 <figcaption>
 <p><span class="caption-text">Adding MinGW bin directory to environment variables</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
@@ -589,7 +587,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 <li><p>Run the installer and follow the instructions.</p></li>
 </ol>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="_images/vscode.png"><img alt="_images/vscode.png" src="_images/vscode.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_static/vscode.png"><img alt="_static/vscode.png" src="_static/vscode.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text">Visual Studio Code installer</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
@@ -608,7 +606,7 @@ If you want POSIX application deployment on this platform, please consider Cygwi
 <li><p>Install extensions for Visual Studio Code:</p>
 <blockquote>
 <div><figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="_images/vscode_gf.png"><img alt="_images/vscode_gf.png" src="_images/vscode_gf.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_static/vscode_gf.png"><img alt="_static/vscode_gf.png" src="_static/vscode_gf.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-text">Visual Studio Code extensions</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>

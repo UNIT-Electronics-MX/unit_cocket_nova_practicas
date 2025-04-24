@@ -114,7 +114,7 @@ Contador binarios 3 bits
        - led verde
 
 
-.. figure:: /_static/schematic_block_1.png
+.. figure:: /_static/pwm_motor/counter.png
     :align: center
     :alt: Diagrama pictorico
     :width: 50%
@@ -224,3 +224,10 @@ Aplicaciones
 ~~~~~~~~~~~~
 
 Controlador de velocidad de motor
+
+.. figure:: /_static/pwm_motor/pwm_motor.png
+    :align: center
+    :alt: figura-gif
+    :width: 60%
+
+    Controlador de velocidad de motor

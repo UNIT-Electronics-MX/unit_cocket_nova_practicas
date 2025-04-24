@@ -139,3 +139,21 @@ El ADC del microcontrolador CH552 tiene una resolución de 8 bits, lo que signif
          }
 
 
+Aplicaciones
+-----------------
+
+Control de velocidad de un motor por PWM con entrada analógica
+
+.. figure::  /_static/pwm_motor/pot_pwm_motor.png
+   :align: center
+   :alt: Control de velocidad de un motor por PWM con entrada analógica
+   :width: 80%
+
+   Control de velocidad de un motor por PWM con entrada analógica
+
+
+.. only:: html
+
+   .. raw:: html
+      
+      <iframe src="_static/serial_console/serial_console.html" width="100%" height="500" style="border:none;"></iframe>

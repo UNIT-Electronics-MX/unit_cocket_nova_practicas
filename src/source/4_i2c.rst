@@ -8,7 +8,7 @@ I2C (Inter-Integrated Circuit o Inter-IC) es un bus de comunicación serial sín
 
 Bit-banging es una técnica de programación en la que se manipulan directamente los pines de un microcontrolador para implementar un protocolo de comunicación. En el caso de I2C, se utilizan dos pines, SDA (Serial Data) y SCL (Serial Clock), para la comunicación entre dispositivos.
 
-.. figure:: /_static/i2c_typic.png
+.. figure:: /_static/cocket/i2c_typic.png
    :align: center
    :alt: I2C
    :width: 90%

@@ -57,7 +57,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Control WS2812" href="7_WS2812.html" />
-    <link rel="prev" title="SPI (Interfaz Periférica Serial)" href="5_spi.html" />
+    <link rel="prev" title="I2C (Inter-Integrated Circuit)" href="4_i2c.html" />
     <link rel="icon" href="_static/3.png" type="image/x-icon">
     <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
 
@@ -175,12 +175,10 @@
 <li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas Digitales</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas digitales</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas Digitales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="5_spi.html">SPI (Interfaz Periférica Serial)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Interfaz USB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a></li>
@@ -418,7 +416,7 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/hid_example.png"><img alt="HID" src="_images/hid_example.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Ejemplo de Dispositivo HID</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 18 </span><span class="caption-text">Ejemplo de Dispositivo HID</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
  <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
@@ -430,7 +428,13 @@ document.write(`
      <td style="border: 1px solid #ccc; padding: 8px;">HID Teclado y Ratón </td>
      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples/tree/main/Software/examples/USB/USB-HID" target="_blank">HID device</a></td>
  </tr>
-</table></section>
+</table><iframe src="_static/processing/cube.html" width="660" height="400" style="border:none;"></iframe><figure class="align-center">
+<a class="reference internal image-reference" href="_images/cursor.gif"><img alt="figura-gif" src="_images/cursor.gif" style="width: 60%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/keyboard.gif"><img alt="figura-gif" src="_images/keyboard.gif" style="width: 60%;" /></a>
+</figure>
+</section>
 <section id="cdc-clase-de-dispositivo-de-comunicacion">
 <h2>CDC (Clase de Dispositivo de Comunicación)<a class="headerlink" href="#cdc-clase-de-dispositivo-de-comunicacion" title="Link to this heading">#</a></h2>
 <p>CDC (Communication Device Class) es una clase de dispositivos USB que permite la comunicación entre un dispositivo y una computadora. Los dispositivos CDC incluyen módems, adaptadores de red, etc.</p>
@@ -459,12 +463,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5_spi.html"
+       href="4_i2c.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">SPI (Interfaz Periférica Serial)</p>
+        <p class="prev-next-title">I2C (Inter-Integrated Circuit)</p>
       </div>
     </a>
     <a class="right-next"
