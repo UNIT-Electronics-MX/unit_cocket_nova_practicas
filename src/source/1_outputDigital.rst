@@ -92,6 +92,8 @@ Aplicaciones
 ~~~~~~~~~~~~
 Contador binarios 3 bits
 
+
+
 .. figure:: /_static/cocket/semaforo.jpg
     :align: center
     :alt: contador binario
@@ -113,6 +115,16 @@ Contador binarios 3 bits
      * - G
        - led verde
 
+.. raw:: html
+
+    <div style="text-align: right;">
+      <br>
+      <a href="_counter.bin" download="counter.bin">
+         <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+            Firmware counter.bin
+         </button>
+      </a>
+    </div>
 
 .. figure:: /_static/pwm_motor/counter.png
     :align: center
@@ -120,6 +132,15 @@ Contador binarios 3 bits
     :width: 50%
 
      Diagrama pictórico del contador binario
+
+
+.. only:: html
+
+   .. raw:: html
+      
+      <iframe src="_static/serial_console/serial_console.html" width="100%" height="500" style="border:none;"></iframe>
+      <br>
+      
 
 Modulación por ancho de pulso (PWM)
 ===================================

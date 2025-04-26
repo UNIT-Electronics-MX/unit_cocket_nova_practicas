@@ -88,31 +88,11 @@ Arduino IDE y SDCC
 ------------------
 El ADC del microcontrolador CH552 tiene una resolución de 8 bits, lo que significa que puede representar valores entre 0 y 255. Para leer un valor analógico, se utiliza la función `analogRead()` en Arduino IDE o `ADC_read()` en SDCC.
 
+.. warning::
+
+   Este ejemplo simplificado prescinde de la comunicación serial para mostrar el funcionamiento básico del ADC. En un entorno real, es recomendable utilizar la comunicación serial para enviar los datos leídos a una computadora o dispositivo externo.
+
 .. tabs::
-
-   .. tab:: C++
-
-      .. code-block:: cpp
-
-         #define LED_BUILTIN 34
-
-         int sensorPin = 11;
-         int ledPin = LED_BUILTIN;
-         int sensorValue = 0;
-
-         void setup() {
-            pinMode(ledPin, OUTPUT);
-            pinMode(sensorPin, INPUT);
-         }
-
-         void loop() {
-            sensorValue = analogRead(sensorPin);
-            digitalWrite(ledPin, HIGH);
-            delay(sensorValue);
-            digitalWrite(ledPin, LOW);
-            delay(sensorValue);
-         }
-
 
    .. tab:: SDCC
 
@@ -139,17 +119,57 @@ El ADC del microcontrolador CH552 tiene una resolución de 8 bits, lo que signif
          }
 
 
+   .. tab:: C++
+
+      .. code-block:: cpp
+
+         #define LED_BUILTIN 34
+
+         int sensorPin = 11;
+         int ledPin = LED_BUILTIN;
+         int sensorValue = 0;
+
+         void setup() {
+            pinMode(ledPin, OUTPUT);
+            pinMode(sensorPin, INPUT);
+         }
+
+         void loop() {
+            sensorValue = analogRead(sensorPin);
+            digitalWrite(ledPin, HIGH);
+            delay(sensorValue);
+            digitalWrite(ledPin, LOW);
+            delay(sensorValue);
+         }
+
+
 Aplicaciones
 -----------------
 
-Control de velocidad de un motor por PWM con entrada analógica
+Lectura de potenciómetro salida serial, usa el firmware adc.bin para probar la lectura de un potenciómetro conectado al pin P11 del microcontrolador. El valor leído se envía a través de la salida serial. 
 
-.. figure::  /_static/pwm_motor/pot_pwm_motor.png
+
+
+.. raw:: html
+
+   <div style="text-align: right;">
+     <br>
+     <a href="_adc.bin" download="adc.bin">
+       <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+         Firmware adc.bin
+       </button>
+     </a>
+   </div>
+
+.. figure::  /_static/pwm_motor/adc.png
    :align: center
-   :alt: Control de velocidad de un motor por PWM con entrada analógica
+   :alt: c
    :width: 80%
 
-   Control de velocidad de un motor por PWM con entrada analógica
+   Lectura de potenciómetro salida serial
+
+.. button download firmware adc.bin 
+
 
 
 .. only:: html
