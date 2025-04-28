@@ -23,17 +23,18 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
 - `1 - Semáforo LED 5V 10mm <https://uelectronics.com/producto/semaforo-led-5v-10mm/>`_ 19
 - `3 - LEDS Rojo, Verde y Ambar 5mm <https://uelectronics.com/producto/led-3mm-difuso/>`_ 3
 - `1 - AR3473 - Par de Hélices con Motor CC sin Núcleo 3.7-4.2V DC <https://uelectronics.com/producto/par-de-helices-con-motor-cc-sin-nucleo-3-7-4-2v-dc/>`_ - 68
-- `1 - AR0187 - 1N4001 Diodo Rectificador <https://uelectronics.com/producto/1n4001-diodo-rectificador/>`_ 3
 - `6 - AR0706 - Resistencia de 330  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `3 - AR0729 - Resistencia de 10K  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `2 - AR0483 - Push Button 4 pines MicroSwitch <http://uelectronics.com/producto/push-button-4-pines-microswitch/>`_ - 3
-- `3 - AR0191 - 2N3904 Transistor BJT NPN 40V TO-92 <https://uelectronics.com/producto/2n3904-transistor-bjt-npn-40v-to-92/>`_ - 6
+- `1 -        - Modulo PWM <https://github.com/UNIT-Electronics-MX/unit_pwm_module>`_
 - `1 - AR0211 - Potenciometro 3 Pines 15mm WH148 <https://uelectronics.com/producto/potenciometro-3-pines-15mm-wh148/>`_ - 9
-- `1 - AR1533 - PIR Sensor <https://uelectronics.com/producto/pir-hc-sr501-hc-sr505-hy3612-am312-sensores-de-movimiento/>`_ - 34
 - `1 - AR1851 - Pantalla OLED 128x64 <https://uelectronics.com/producto/display-oled-azul-y-blanco-128x64-0-96-i2c-ssd1306/>`_ - 74
 - `1 - AR0461 - Tira Neopixel WS2812 5050 RGB LED <https://uelectronics.com/producto/tira-neopixel-ws2812-5050-rgb-led/>`_ - 21
-- `1 - AR4497 - Teclado Matricial con Push Button <https://uelectronics.com/producto/teclado-matricial-con-push-button/>`_ 18
 - `1 - AR4431 - UNIT Expansor I2C con BUS QWIIC  <https://uelectronics.com/producto/unit-expansor-i2c-con-bus-qwiic/>`_ 39
+- `1 - AR0070 - Protoboard de 400pts y 830pts Blanco o Transparente <https://uelectronics.com/producto/protoboard-de-400pts-y-830pts-blanco-o-transparente/>`_ 
+- `1 - AR4349 - Cocket Nova <https://uelectronics.com/producto/unit-cocket-nova-ch552g-tarjeta-de-desarrollo/>`_ 1
+- `1 - AR0099 - Cables Dupont Cortos 10cm HH MH MM <https://uelectronics.com/producto/cables-dupont-cortos-10cm-hh-mh-mm/>`_ 1
+- `4 - AR2948 - Conectores SH1.0mm con Cable 28 AWG 15cm <https://uelectronics.com/producto/conectores-sh1-0mm-con-cable-28-awg-15cm/>`_ 1
 
 .. toctree::
   :maxdepth: 2
@@ -41,12 +42,15 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
    
   0_0_about 
   0_1_jst
-  0_2_1_sdk.rst
-  1_outputDigital
+  0_2_1_sdk
+  0_2_2_loader
+  1_0_outputDigital
+  1_1_pwm
   2_inputDigital
   3_adc
   4_i2c
-  6_USB
+  6_0_USB
+  6_1_USB
   7_WS2812.rst
   report
   

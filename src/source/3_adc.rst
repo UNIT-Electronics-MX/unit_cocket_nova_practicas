@@ -154,7 +154,7 @@ Lectura de potenciómetro salida serial, usa el firmware adc.bin para probar la 
 
    <div style="text-align: right;">
      <br>
-     <a href="_adc.bin" download="adc.bin">
+     <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/adc.bin" download="adc.bin">
        <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
          Firmware adc.bin
        </button>

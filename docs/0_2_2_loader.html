@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Interfaz USB &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
+    <title>Grabar Firmware &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
   
   
   
@@ -53,11 +53,11 @@
     <script src="_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '6_USB';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0_2_2_loader';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Control WS2812" href="7_WS2812.html" />
-    <link rel="prev" title="I2C (Inter-Integrated Circuit)" href="4_i2c.html" />
+    <link rel="next" title="Salidas Digitales" href="1_0_outputDigital.html" />
+    <link rel="prev" title="SDK Docker CH55x Unit" href="0_2_1_sdk.html" />
     <link rel="icon" href="_static/3.png" type="image/x-icon">
     <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
 
@@ -173,13 +173,15 @@
 <li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_outputDigital.html">Salidas Digitales</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Grabar Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_0_outputDigital.html">Salidas Digitales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_1_pwm.html">Modulación por ancho de pulso (PWM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas Digitales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interfaz USB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_0_USB.html">HID - Teclado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_1_USB.html">HID - Ratón</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_WS2812.html">Control WS2812</a></li>
 <li class="toctree-l1"><a class="reference internal" href="report.html">Cómo Generar un Informe de Error</a></li>
 </ul>
@@ -253,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/6_USB.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/0_2_2_loader.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2F6_USB.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2F0_2_2_loader.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +302,7 @@
       
       
       
-      <li><a href="_sources/6_USB.rst" target="_blank"
+      <li><a href="_sources/0_2_2_loader.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Interfaz USB</h1>
+    <h1>Grabar Firmware</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,16 +396,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolos-y-modo-de-operacion">Protocolos y Modo de Operación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-hid-dispositivo-de-interfaz-humano">Interfaz HID (Dispositivo de Interfaz Humano)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-firmware-para-hid-mouse">Ejemplo de Firmware para HID (Mouse)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hid">Prueba de HID</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-hid-teclado">Interfaz HID (Teclado)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-la-interaccion-del-teclado">Visualización de la Interacción del Teclado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cocket-nova-ch552g-usando-wchisptool-windows-os">Cocket Nova CH552G Usando WCHISPTool (Windows OS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-abre-wchisptool-e-instala-los-drivers-necesarios">Paso 1: Abre WCHISPTool e instala los drivers necesarios.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-carga-el-archivo-de-firmware">Paso 2: Carga el archivo de firmware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-graba-el-firmware">Paso 3: Graba el firmware</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loadupch-gnu-linux-os">Loadupch (GNU/Linux OS)</a></li>
 </ul>
             </nav>
         </div>
@@ -415,88 +414,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="interfaz-usb">
-<h1>Interfaz USB<a class="headerlink" href="#interfaz-usb" title="Link to this heading">#</a></h1>
-<section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
-<p>La interfaz USB es un estándar de comunicación ampliamente utilizado para la conexión y alimentación de dispositivos. En el contexto de microcontroladores, se utiliza para realizar tareas como la transferencia de datos, actualización de firmware, depuración, entre otras.</p>
-</section>
-<section id="protocolos-y-modo-de-operacion">
-<h2>Protocolos y Modo de Operación<a class="headerlink" href="#protocolos-y-modo-de-operacion" title="Link to this heading">#</a></h2>
-<p>Existen diferentes protocolos USB según la aplicación. Algunos de los más usados en microcontroladores son:</p>
-<ul class="simple">
-<li><p>HID (Dispositivo de Interfaz Humano): Para la interacción directa con el usuario mediante dispositivos como teclados y ratones.</p></li>
-<li><p>CDC (Dispositivo de Comunicación de Datos): Para establecer puertos seriales virtuales.</p></li>
-<li><p>MSC (Dispositivo de Clase Masiva): Para el intercambio de archivos con dispositivos de almacenamiento.</p></li>
-</ul>
-</section>
-<section id="interfaz-hid-dispositivo-de-interfaz-humano">
-<h2>Interfaz HID (Dispositivo de Interfaz Humano)<a class="headerlink" href="#interfaz-hid-dispositivo-de-interfaz-humano" title="Link to this heading">#</a></h2>
-<p>HID (Human Interface Device) permite a los dispositivos electrónicos interactuar con un usuario. Entre los dispositivos HID se incluyen teclados, ratones, joysticks, y gamepads.</p>
+  <section id="grabar-firmware">
+<h1>Grabar Firmware<a class="headerlink" href="#grabar-firmware" title="Link to this heading">#</a></h1>
+<section id="cocket-nova-ch552g-usando-wchisptool-windows-os">
+<h2>Cocket Nova CH552G Usando WCHISPTool (Windows OS)<a class="headerlink" href="#cocket-nova-ch552g-usando-wchisptool-windows-os" title="Link to this heading">#</a></h2>
+<p>Este tutorial ofrece un método sencillo para actualizar el firmware en el Cocket Nova CH552G utilizando WCHISPTool. Este enfoque garantiza que tu placa esté operativa rápidamente, independientemente de si utilizas archivos .bin o .hex (generados usando el compilador SDCC).</p>
+<section id="paso-1-abre-wchisptool-e-instala-los-drivers-necesarios">
+<h3>Paso 1: Abre WCHISPTool e instala los drivers necesarios.<a class="headerlink" href="#paso-1-abre-wchisptool-e-instala-los-drivers-necesarios" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Para garantizar que tu PC y el dispositivo se comuniquen correctamente, instala el driver USB CH372.</p></li>
+<li><p>Inicia WCHISPTool: abre el programa en tu computadora.</p></li>
+<li><p>Conecta tu dispositivo: coloca el CH552G en Modo de Arranque manteniendo presionado el botón de arranque mientras lo conectas a tu PC mediante USB.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>WCHISPTool detectará automáticamente tu dispositivo y configurará los ajustes apropiados para el chip CH552G. No necesitas seleccionar el chip manualmente.</p>
+</div>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/hid_example.png"><img alt="HID" src="_images/hid_example.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="_images/chip.png"><img alt="OLED a Cocket Nova" src="_images/chip.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 18 </span><span class="caption-text">Ejemplo de Dispositivo HID</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Figura 8 </span><span class="caption-text">OLED a Cocket Nova</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
- <table style="width: 100%; border-collapse: collapse; border: 1px solid #ccc;">
- <tr>
-      <th style="border: 1px solid #ccc; padding: 8px;">Biblioteca</th>
-      <th style="border: 1px solid #ccc; padding: 8px;">Enlace</th>
- </tr>
- <tr>
-      <td style="border: 1px solid #ccc; padding: 8px;">HID Teclado y Ratón</td>
-      <td style="border: 1px solid #ccc; padding: 8px;"><a href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples/tree/main/Software/examples/USB/USB-HID" target="_blank">HID device</a></td>
- </tr>
-</table></section>
-<section id="ejemplo-de-firmware-para-hid-mouse">
-<h2>Ejemplo de Firmware para HID (Mouse)<a class="headerlink" href="#ejemplo-de-firmware-para-hid-mouse" title="Link to this heading">#</a></h2>
-<p>El firmware mouse.bin permite probar la funcionalidad de un dispositivo HID en forma de mouse. Para la descarga, utiliza el siguiente botón:</p>
-<div style="text-align: right;">
-  <br>
-  <a href="_mouse.bin" download="mouse.bin">
-     <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
-        Firmware mouse.bin
-     </button>
-  </a>
-</div><section id="prueba-de-hid">
-<h3>Prueba de HID<a class="headerlink" href="#prueba-de-hid" title="Link to this heading">#</a></h3>
-<p>Para interactuar con el dispositivo HID, carga el firmware en el microcontrolador y utiliza el navegador para observar las reacciones. El siguiente GIF muestra una secuencia de prueba:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="_images/cursor.gif"><img alt="figura-gif" src="_images/cursor.gif" style="width: 60%;" /></a>
-</figure>
-<p>Adicionalmente, se incluye una demostración interactiva:</p>
-<div style="text-align: center;">
-      <iframe src="_static/processing/cube.html" width="660" height="400" style="border: none; margin: 0 auto;"></iframe>
-</div></section>
-<section id="interfaz-hid-teclado">
-<h3>Interfaz HID (Teclado)<a class="headerlink" href="#interfaz-hid-teclado" title="Link to this heading">#</a></h3>
-<p>El firmware keyboard.bin permite probar la funcionalidad de un dispositivo HID en forma de teclado.</p>
-<div style="text-align: right;">
-  <br>
-  <a href="_keyboard.bin" download="keyboard.bin">
-     <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
-        Firmware keyboard.bin
-     </button>
-  </a>
-</div></section>
-<section id="visualizacion-de-la-interaccion-del-teclado">
-<h3>Visualización de la Interacción del Teclado<a class="headerlink" href="#visualizacion-de-la-interaccion-del-teclado" title="Link to this heading">#</a></h3>
-<figure class="align-center">
-<a class="reference internal image-reference" href="_images/keyboard.gif"><img alt="figura-gif" src="_images/keyboard.gif" style="width: 60%;" /></a>
-</figure>
-<p>Otra de las pruebas se puede realizar accediendo a un editor de texto simulado:</p>
-<div style="text-align: center;">
-      <iframe src="_static/serial_console/notepad.html" width="660" height="500" style="border: none; margin: 0 auto;"></iframe>
-</div></section>
 </section>
-<section id="referencias">
-<h2>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<section id="paso-2-carga-el-archivo-de-firmware">
+<h3>Paso 2: Carga el archivo de firmware<a class="headerlink" href="#paso-2-carga-el-archivo-de-firmware" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Navega a la sección «Archivo de Descarga» en WCHISPTool.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/path.png"><img alt="OLED a Cocket Nova" src="_images/path.png" style="width: 60%;" /></a>
+</figure>
+<ol class="arabic simple" start="2">
+<li><dl class="simple">
+<dt>Haz clic en el ícono de «Archivo Objeto» y localiza tu archivo de firmware.</dt><dd><p>Formatos soportados: .bin o .hex (generados usando el compilador SDCC).</p>
+</dd>
+</dl>
+</li>
+<li><p>Selecciona el archivo y asegúrate de que la casilla de «Archivo de Descarga» esté activada.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/path_l.png"><img alt="OLED a Cocket Nova" src="_images/path_l.png" style="width: 60%;" /></a>
+</figure>
+</section>
+<section id="paso-3-graba-el-firmware">
+<h3>Paso 3: Graba el firmware<a class="headerlink" href="#paso-3-graba-el-firmware" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Confirma que el dispositivo esté en Modo de Arranque.</p></li>
+<li><p>Haz clic en el botón «Descargar» para iniciar el grabado del firmware.</p></li>
+<li><p>Una barra de progreso indicará el estado. Espera a que el proceso se complete.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/load.png"><img alt="OLED a Cocket Nova" src="_images/load.png" style="width: 60%;" /></a>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p>Para un proceso más simplificado, la opción de Descarga Automática de WCHISPTool lo simplifica todo:</p>
 <ul class="simple">
-<li><p>Documentación oficial de USB: <a class="reference external" href="https://www.usb.org/">USB Implementers Forum</a></p></li>
-<li><p>Ejemplos de firmware HID en GitHub: <a class="reference external" href="https://github.com/UNIT-Electronics/CH55x_SDCC_Examples">HID device examples</a></p></li>
+<li><p>El programa detecta automáticamente el dispositivo conectado, carga el firmware y maneja el proceso de grabado sin requerir intervención manual.</p></li>
 </ul>
-<p>Con este complemento se busca ofrecer una visión más amplia y detallada de la interfaz USB y sus aplicaciones en dispositivos con microcontroladores.</p>
+</div>
+<p>Con estos pasos, tu Cocket Nova CH552G se habrá grabado exitosamente y estará listo para el desarrollo.</p>
+</section>
+</section>
+<section id="loadupch-gnu-linux-os">
+<h2>Loadupch (GNU/Linux OS)<a class="headerlink" href="#loadupch-gnu-linux-os" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -512,20 +494,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="4_i2c.html"
+       href="0_2_1_sdk.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">I2C (Inter-Integrated Circuit)</p>
+        <p class="prev-next-title">SDK Docker CH55x Unit</p>
       </div>
     </a>
     <a class="right-next"
-       href="7_WS2812.html"
+       href="1_0_outputDigital.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Control WS2812</p>
+        <p class="prev-next-title">Salidas Digitales</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,16 +527,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocolos-y-modo-de-operacion">Protocolos y Modo de Operación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-hid-dispositivo-de-interfaz-humano">Interfaz HID (Dispositivo de Interfaz Humano)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-firmware-para-hid-mouse">Ejemplo de Firmware para HID (Mouse)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-hid">Prueba de HID</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-hid-teclado">Interfaz HID (Teclado)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-la-interaccion-del-teclado">Visualización de la Interacción del Teclado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cocket-nova-ch552g-usando-wchisptool-windows-os">Cocket Nova CH552G Usando WCHISPTool (Windows OS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-abre-wchisptool-e-instala-los-drivers-necesarios">Paso 1: Abre WCHISPTool e instala los drivers necesarios.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-carga-el-archivo-de-firmware">Paso 2: Carga el archivo de firmware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-graba-el-firmware">Paso 3: Graba el firmware</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loadupch-gnu-linux-os">Loadupch (GNU/Linux OS)</a></li>
 </ul>
   </nav></div>
 

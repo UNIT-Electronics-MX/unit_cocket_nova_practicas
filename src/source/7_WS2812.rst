@@ -98,6 +98,16 @@ Control WS2812 con SDCC
 .. htmlonly::
    
 
+.. raw:: html
+
+    <div style="text-align: right;">
+      <br>
+      <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/neo.bin" download="neo.bin">
+         <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+            Descargar firmware neo.bin
+         </button>
+      </a>
+    </div>
 
 
 .. only:: html

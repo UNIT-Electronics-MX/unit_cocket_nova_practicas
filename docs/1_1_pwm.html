@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SDK Docker CH55x Unit &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
+    <title>Modulación por ancho de pulso (PWM) &#8212; documentación de Practicario DevLab Cocket Nova - 0.0.1</title>
   
   
   
@@ -49,15 +49,16 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/translations.js?v=efdbd0b9"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0_2_1_sdk';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_1_pwm';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Grabar Firmware" href="0_2_2_loader.html" />
-    <link rel="prev" title="Conector JST SH 1.0mm 4 pines" href="0_1_jst.html" />
+    <link rel="next" title="Entradas Digitales" href="2_inputDigital.html" />
+    <link rel="prev" title="Salidas Digitales" href="1_0_outputDigital.html" />
     <link rel="icon" href="_static/3.png" type="image/x-icon">
     <link rel="shortcut icon" href="_static/3.png" type="image/x-icon">
 
@@ -172,10 +173,10 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_0_about.html">Cocket Nova CH552</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_1_jst.html">Conector JST SH 1.0mm 4 pines</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SDK Docker CH55x Unit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_1_sdk.html">SDK Docker CH55x Unit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_2_2_loader.html">Grabar Firmware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_0_outputDigital.html">Salidas Digitales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_1_pwm.html">Modulación por ancho de pulso (PWM)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modulación por ancho de pulso (PWM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_inputDigital.html">Entradas Digitales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_adc.html">Conversión de Analógico a Digital</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_i2c.html">I2C (Inter-Integrated Circuit)</a></li>
@@ -255,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/0_2_1_sdk.rst" target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/edit/main/docs/1_1_pwm.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -272,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2F0_2_1_sdk.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UNIT-Electronics-MX/Ecosistema-de-Desarrollo-UNIT/issues/new?title=Issue%20on%20page%20%2F1_1_pwm.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Abrir un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +303,7 @@
       
       
       
-      <li><a href="_sources/0_2_1_sdk.rst" target="_blank"
+      <li><a href="_sources/1_1_pwm.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SDK Docker CH55x Unit</h1>
+    <h1>Modulación por ancho de pulso (PWM)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,23 +397,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comun-todas-las-plataformas">Común (Todas las plataformas)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion">Implementación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">Aplicaciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">Instalación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-la-imagen-de-docker">Construir la imagen de Docker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-nuevo-proyecto">Crear un Nuevo Proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-ayuda">Mostrar ayuda</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilar-un-proyecto">Compilar un proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-make-clean-all-hex-etc">Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salida">Salida</a></li>
 </ul>
             </nav>
         </div>
@@ -424,132 +413,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="sdk-docker-ch55x-unit">
-<h1>SDK Docker CH55x Unit<a class="headerlink" href="#sdk-docker-ch55x-unit" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>SDK portátil para el desarrollo de firmware CH552 usando SDCC en contenedores Docker. Incluye una herramienta de línea de comandos multiplataforma (<cite>spkg</cite>) para simplificar la compilación tanto en Linux como en Windows.</p>
-</div>
-<section id="estructura-del-proyecto">
-<h2>Estructura del Proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ch552-docker-sdk/
-├── spkg/                   # Sistema de construcción CLI autónomo
-│   ├── spkg                # Lanzador CLI (script bash)
-│   ├── Dockerfile          # Entorno de construcción basado en SDCC
-│   └── docker-compose.yml  # Configuración del contenedor
-├── template/               # Proyectos de ejemplo para CH552
-│   └── Blink/              # Ejemplo Blink (main.c, src/, tools/, Makefile)
-└── README.md
-</pre></div>
-</div>
-</section>
-<section id="caracteristicas-principales">
-<h2>Características Principales<a class="headerlink" href="#caracteristicas-principales" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Herramienta de línea de comandos unificada: «spkg» disponible en Linux y Windows (usando Git Bash).</p></li>
-<li><p>No requiere la instalación manual de SDCC ni de otros toolchains.</p></li>
-<li><p>Emplea contenedores Docker para proporcionar un entorno de compilación completamente aislado.</p></li>
-<li><p>Basado en un sistema de proyectos con Makefile, compatible con los microcontroladores CH552/CH55x.</p></li>
-<li><p>Incluye un proyecto de ejemplo ubicado en el directorio <code class="docutils literal notranslate"><span class="pre">template/</span></code>.</p></li>
-</ul>
-</section>
-<section id="requisitos">
-<h2>Requisitos<a class="headerlink" href="#requisitos" title="Link to this heading">#</a></h2>
-<section id="comun-todas-las-plataformas">
-<h3>Común (Todas las plataformas)<a class="headerlink" href="#comun-todas-las-plataformas" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></p></li>
-</ul>
-</section>
-<section id="linux-macos">
-<h3>Linux/macOS<a class="headerlink" href="#linux-macos" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Git</p></li>
-<li><p>Python 3</p></li>
-<li><p>Shell Bash</p></li>
-<li><p>Privilegios de superusuario requeridos para ejecutar Docker</p></li>
-</ul>
-</section>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://gitforwindows.org/">Git Bash</a></p></li>
-<li><p>Docker Desktop con backend WSL2 o Hyper-V habilitado</p></li>
-<li><p>MinGW64 (incluido con Git Bash) para el comando <code class="docutils literal notranslate"><span class="pre">make</span></code></p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Ejecutar <code class="docutils literal notranslate"><span class="pre">spkg</span></code> en Linux puede requerir <code class="docutils literal notranslate"><span class="pre">sudo</span></code> si el usuario no forma parte del grupo <code class="docutils literal notranslate"><span class="pre">docker</span></code>. Puedes agregar a tu usuario con:
-<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-aG</span> <span class="pre">docker</span> <span class="pre">$USER</span> <span class="pre">&amp;&amp;</span> <span class="pre">newgrp</span> <span class="pre">docker</span></code></p>
-</div>
-</section>
-</section>
-<section id="instalacion">
-<h2>Instalación<a class="headerlink" href="#instalacion" title="Link to this heading">#</a></h2>
-<p>Clona el repositorio:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:UNIT-Electronics-MX/unit_ch55x_docker_sdk.git
-<span class="nb">cd</span><span class="w"> </span>ch552-docker-sdk/spkg
-chmod<span class="w"> </span>+x<span class="w"> </span>spkg
-</pre></div>
-</div>
-<p>(Optional) Instálalo globalmente:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/spkg&quot;</span><span class="w"> </span>/usr/local/bin/spkg
-</pre></div>
-</div>
-<p>Ahora puedes ejecutar <code class="docutils literal notranslate"><span class="pre">spkg</span></code> desde cualquier ubicación.</p>
-<section id="construir-la-imagen-de-docker">
-<h3>Construir la imagen de Docker<a class="headerlink" href="#construir-la-imagen-de-docker" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>compose
-</pre></div>
-</div>
+  <section id="modulacion-por-ancho-de-pulso-pwm">
+<h1>Modulación por ancho de pulso (PWM)<a class="headerlink" href="#modulacion-por-ancho-de-pulso-pwm" title="Link to this heading">#</a></h1>
+<p>La modulación por ancho de pulso (PWM) es una técnica utilizada para controlar la cantidad de energía entregada a un dispositivo. En los microcontroladores, el PWM se utiliza para controlar la velocidad de los motores, el brillo de los LEDs y más.</p>
 <div class="admonition warning">
 <p class="admonition-title">Advertencia</p>
-<p>Asegurate de que Docker esté en ejecución y que tu usuario tenga permisos para ejecutarlo.
-Puedes verificarlo ejecutando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. Si no ves errores, Docker está funcionando correctamente.</p>
+<p>El soporte de ubicación para salidas PWM depende de la placa de desarrollo. Revisar la documentación de la placa para conocer los pines PWM disponibles.</p>
 </div>
-</section>
-<section id="crear-un-nuevo-proyecto">
-<h3>Crear un Nuevo Proyecto<a class="headerlink" href="#crear-un-nuevo-proyecto" title="Link to this heading">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Este comando creará un nuevo directorio con el nombre especificado.</p>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./spkg/spkg<span class="w"> </span>init<span class="w"> </span>template/project
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/pwm.gif"><img alt="figura-gif" src="_images/pwm.gif" style="width: 60%;" /></a>
+</figure>
+<section id="implementacion">
+<h2>Implementación<a class="headerlink" href="#implementacion" title="Link to this heading">#</a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/led.gif"><img alt="figura-gif" src="_images/led.gif" style="width: 60%;" /></a>
+</figure>
+<section id="arduino-ide-y-sdcc">
+<h3>Arduino IDE y SDCC<a class="headerlink" href="#arduino-ide-y-sdcc" title="Link to this heading">#</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">SDCC</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">C++</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/config.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/system.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/gpio.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/delay.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;src/pwm.h&quot;</span>
+
+<span class="cp">#define MIN_COUNTER 10</span>
+<span class="cp">#define MAX_COUNTER 254</span>
+<span class="cp">#define STEP_SIZE   10</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">change_pwm</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">hex_value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="n">PWM_write</span><span class="p">(</span><span class="n">PIN_PWM</span><span class="p">,</span><span class="w"> </span><span class="n">hex_value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="n">CLK_config</span><span class="p">();</span>
+<span class="w">     </span><span class="n">DLY_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="w">     </span><span class="n">PWM_set_freq</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">     </span><span class="n">PIN_output</span><span class="p">(</span><span class="n">PIN_PWM</span><span class="p">);</span>
+<span class="w">     </span><span class="n">PWM_start</span><span class="p">(</span><span class="n">PIN_PWM</span><span class="p">);</span>
+<span class="w">     </span><span class="n">PWM_write</span><span class="p">(</span><span class="n">PIN_PWM</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">     </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">     </span><span class="p">{</span>
+<span class="w">          </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MIN_COUNTER</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX_COUNTER</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">+=</span><span class="n">STEP_SIZE</span><span class="p">)</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">                </span><span class="n">change_pwm</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">                </span><span class="n">DLY_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">          </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAX_COUNTER</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">MIN_COUNTER</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">-=</span><span class="n">STEP_SIZE</span><span class="p">)</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">                </span><span class="n">change_pwm</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">                </span><span class="n">DLY_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="mostrar-ayuda">
-<h3>Mostrar ayuda<a class="headerlink" href="#mostrar-ayuda" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>--help
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define led 34</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">fadeAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">pinMode</span><span class="p">(</span><span class="n">led</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">led</span><span class="p">,</span><span class="w"> </span><span class="n">brightness</span><span class="p">);</span>
+<span class="w">     </span><span class="n">brightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fadeAmount</span><span class="p">;</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">brightness</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">fadeAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">fadeAmount</span><span class="p">;</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">     </span><span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+</div></div>
 </section>
-<section id="compilar-un-proyecto">
-<h3>Compilar un proyecto<a class="headerlink" href="#compilar-un-proyecto" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink
-</pre></div>
-</div>
+<section id="aplicaciones">
+<h3>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Link to this heading">#</a></h3>
+<div style="text-align: right;">
+  <br>
+  <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/pwm.bin" download="pwm.bin">
+    <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+      Firmware pwm.bin
+    </button>
+  </a>
+</div><p>Controlador de velocidad de motor</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/pwm_motor.png"><img alt="figura-gif" src="_images/pwm_motor.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 12 </span><span class="caption-text">Controlador de velocidad de motor</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="ejecutar-make-clean-all-hex-etc">
-<h3>Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.<a class="headerlink" href="#ejecutar-make-clean-all-hex-etc" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>clean
-spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>all
-spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span class="w"> </span>hex
-</pre></div>
-</div>
-</section>
-</section>
-<section id="salida">
-<h2>Salida<a class="headerlink" href="#salida" title="Link to this heading">#</a></h2>
-<p>El binario compilado se generará en:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>template/Blink/build/main.bin
-</pre></div>
-</div>
-<p>Puedes flashearlo usando:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tools/chprog.py</span></code></p></li>
-<li><p><a class="reference external" href="https://www.wch-ic.com/downloads/WCHISPTool_Setup_exe.html">WCHISPTool</a></p></li>
-</ul>
 </section>
 </section>
 
@@ -565,20 +523,20 @@ spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span clas
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0_1_jst.html"
+       href="1_0_outputDigital.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Conector JST SH 1.0mm 4 pines</p>
+        <p class="prev-next-title">Salidas Digitales</p>
       </div>
     </a>
     <a class="right-next"
-       href="0_2_2_loader.html"
+       href="2_inputDigital.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Grabar Firmware</p>
+        <p class="prev-next-title">Entradas Digitales</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -598,23 +556,11 @@ spkg<span class="w"> </span>-p<span class="w"> </span>./template/Blink<span clas
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comun-todas-las-plataformas">Común (Todas las plataformas)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-macos">Linux/macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion">Implementación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-ide-y-sdcc">Arduino IDE y SDCC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">Aplicaciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">Instalación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-la-imagen-de-docker">Construir la imagen de Docker</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-nuevo-proyecto">Crear un Nuevo Proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-ayuda">Mostrar ayuda</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compilar-un-proyecto">Compilar un proyecto</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-make-clean-all-hex-etc">Ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">hex</span></code>, etc.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salida">Salida</a></li>
 </ul>
   </nav></div>
 

@@ -92,9 +92,28 @@ Arduino IDE y SDCC
 Aplicaciones
 -------------
 
+.. raw:: html
+
+   <div style="text-align: right;">
+     <br>
+     <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/button.bin" download="button.bin">
+       <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+         Firmware button.bin
+       </button>
+     </a>
+   </div>
+
 .. figure:: /_static/pwm_motor/button.png
     :align: center
     :alt: figura-gif
     :width: 60%
 
     Aplicación de entrada digital
+
+
+
+.. only:: html
+
+   .. raw:: html
+      
+      <iframe src="_static/serial_console/serial_console.html" width="100%" height="500" style="border:none;"></iframe>

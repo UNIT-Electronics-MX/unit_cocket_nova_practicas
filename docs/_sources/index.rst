@@ -27,12 +27,10 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
 - `6 - AR0706 - Resistencia de 330  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `3 - AR0729 - Resistencia de 10K  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `2 - AR0483 - Push Button 4 pines MicroSwitch <http://uelectronics.com/producto/push-button-4-pines-microswitch/>`_ - 3
-- `3 - AR0191 - 2N3904 Transistor BJT NPN 40V TO-92 <https://uelectronics.com/producto/2n3904-transistor-bjt-npn-40v-to-92/>`_ - 6
+- `1 -        - Modulo PWM <https://github.com/UNIT-Electronics-MX/unit_pwm_module>`_
 - `1 - AR0211 - Potenciometro 3 Pines 15mm WH148 <https://uelectronics.com/producto/potenciometro-3-pines-15mm-wh148/>`_ - 9
-- `1 - AR1533 - PIR Sensor <https://uelectronics.com/producto/pir-hc-sr501-hc-sr505-hy3612-am312-sensores-de-movimiento/>`_ - 34
 - `1 - AR1851 - Pantalla OLED 128x64 <https://uelectronics.com/producto/display-oled-azul-y-blanco-128x64-0-96-i2c-ssd1306/>`_ - 74
 - `1 - AR0461 - Tira Neopixel WS2812 5050 RGB LED <https://uelectronics.com/producto/tira-neopixel-ws2812-5050-rgb-led/>`_ - 21
-- `1 - AR4497 - Teclado Matricial con Push Button <https://uelectronics.com/producto/teclado-matricial-con-push-button/>`_ 18
 - `1 - AR4431 - UNIT Expansor I2C con BUS QWIIC  <https://uelectronics.com/producto/unit-expansor-i2c-con-bus-qwiic/>`_ 39
 
 .. toctree::
@@ -41,12 +39,15 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
    
   0_0_about 
   0_1_jst
-  0_2_1_sdk.rst
-  1_outputDigital
+  0_2_1_sdk
+  0_2_2_loader
+  1_0_outputDigital
+  1_1_pwm
   2_inputDigital
   3_adc
   4_i2c
-  6_USB
+  6_0_USB
+  6_1_USB
   7_WS2812.rst
   report
   
