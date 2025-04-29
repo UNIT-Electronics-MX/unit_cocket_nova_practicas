@@ -22,7 +22,6 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
 
 - `1 - Semáforo LED 5V 10mm <https://uelectronics.com/producto/semaforo-led-5v-10mm/>`_ 19
 - `3 - LEDS Rojo, Verde y Ambar 5mm <https://uelectronics.com/producto/led-3mm-difuso/>`_ 3
-- `1 - AR3473 - Par de Hélices con Motor CC sin Núcleo 3.7-4.2V DC <https://uelectronics.com/producto/par-de-helices-con-motor-cc-sin-nucleo-3-7-4-2v-dc/>`_ - 68
 - `6 - AR0706 - Resistencia de 330  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `3 - AR0729 - Resistencia de 10K  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `2 - AR0483 - Push Button 4 pines MicroSwitch <http://uelectronics.com/producto/push-button-4-pines-microswitch/>`_ - 3

@@ -104,18 +104,18 @@ Aplicaciones
 
    <div style="text-align: right;">
      <br>
-     <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/pwm.bin" download="pwm.bin">
+     <a href="https://github.com/UNIT-Electronics-MX/docs_cocket/releases/download/code_1/servo.bin" download="servo.bin">
        <button class="btn btn-primary" style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
-         Firmware pwm.bin
+         Firmware servo.bin
        </button>
      </a>
    </div>
 
-Controlador de velocidad de motor
+Controlador de servomotor
 
-.. figure:: /_static/pwm_motor/pwm_motor.png
+.. figure:: /_static/pwm_motor/servo.png
     :align: center
-    :alt: figura-gif
+    :alt: servomotor
     :width: 60%
 
-    Controlador de velocidad de motor
+    Controlador de servomotor
