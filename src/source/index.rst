@@ -26,7 +26,7 @@ El contenido de este repositorio está diseñado para utilizarse con la tarjeta 
 - `6 - AR0706 - Resistencia de 330  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `3 - AR0729 - Resistencia de 10K  <https://uelectronics.com/producto/resistencia-de-1-ohm-1m-ohms-1-4w//>`_ 3
 - `2 - AR0483 - Push Button 4 pines MicroSwitch <http://uelectronics.com/producto/push-button-4-pines-microswitch/>`_ - 3
-- `1 -        - Modulo PWM <https://github.com/UNIT-Electronics-MX/unit_pwm_module>`_
+- `1 - AR0071 - Servomotor SG90 RC 9g <https://uelectronics.com/producto/servomotor-sg90-rc-9g/>`_
 - `1 - AR0211 - Potenciometro 3 Pines 15mm WH148 <https://uelectronics.com/producto/potenciometro-3-pines-15mm-wh148/>`_ - 9
 - `1 - AR1851 - Pantalla OLED 128x64 <https://uelectronics.com/producto/display-oled-azul-y-blanco-128x64-0-96-i2c-ssd1306/>`_ - 74
 - `1 - AR0461 - Tira Neopixel WS2812 5050 RGB LED <https://uelectronics.com/producto/tira-neopixel-ws2812-5050-rgb-led/>`_ - 21
